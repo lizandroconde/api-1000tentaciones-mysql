@@ -1,22 +1,35 @@
 // Imports
-import {GraphQLString, GraphQLInt, GraphQLFloat} from 'graphql'
+import {GraphQLString, GraphQLInt, GraphQLFloat, GraphQLBoolean} from 'graphql'
 
 // App Imports
 import {create} from '../resolver'
-import CategoriaType from '../type'
+import PlatoType from '../type'
 
 // Thought create
-export const CategoriaCreate = {
-  type: CategoriaType,
+export const PlatoCreate = {
+  type: PlatoType,
   args: {
+   
     nombre: {
       name: 'nombre',
       type: GraphQLString
     },
-    imagen: {
-        name: 'imagen',
+    titulo: {
+      name: 'titulo',
+      type: GraphQLString
+    },
+    tipo: {
+        name: 'tipo',
         type: GraphQLString
     },
+    necesario: {
+      name: 'necesario',
+      type: GraphQLBoolean
+    }, 
+    status: {
+      name: 'tiempo',
+      type: GraphQLBoolean
+    }
   },
   resolve: create
 }

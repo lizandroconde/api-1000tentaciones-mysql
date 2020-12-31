@@ -3,11 +3,11 @@ import {GraphQLString, GraphQLInt, GraphQLFloat} from 'graphql'
 
 // App Imports
 import {create} from '../resolver'
-import CategoriaType from '../type'
+import MenuType from '../type'
 
 // Thought create
-export const CategoriaCreate = {
-  type: CategoriaType,
+export const MenuCreate = {
+  type: MenuType,
   args: {
     nombre: {
       name: 'nombre',
@@ -16,6 +16,22 @@ export const CategoriaCreate = {
     imagen: {
         name: 'imagen',
         type: GraphQLString
+    },
+    descripcion: {
+        name: 'descripcion',
+        type: GraphQLString
+    },
+    precio: {
+      name: 'precio',
+      type: GraphQLFloat
+    }, 
+    tiempo: {
+      name: 'tiempo',
+      type: GraphQLString
+    },
+    _idcategoria: {
+      name: '_idcategoria',
+      type: GraphQLInt
     },
   },
   resolve: create

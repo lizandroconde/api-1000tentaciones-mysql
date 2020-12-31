@@ -4,18 +4,7 @@ import models from '../../models'
 
 // Get all thoughts
 export async function getAll() {
-  return await models.Categoria.findAll()
-}
-export async function getAllbyId(parentValue,{_id}) {
-  return await models.Categoria.findAll({
-    where:{
-      _id
-    },
-    include:{
-      model: models.Menu,
-      as: 'Menus'
-    }
-  })
+  return await models.Plato.findAll()
 }
 
 // // Create thought

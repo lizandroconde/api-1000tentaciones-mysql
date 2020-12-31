@@ -4,20 +4,23 @@ import models from '../../models'
 
 // Get all thoughts
 export async function getAll() {
-  return await models.Categoria.findAll()
+  return await models.Menu.findAll()
 }
-export async function getAllbyId(parentValue,{_id}) {
-  return await models.Categoria.findAll({
+
+export async function getbyId(parentValue,{_id}) {
+  return await models.Menu.findOne({
+    include:{
+      model: models.Plato,
+      include:{
+        model: models.Tipo,
+        as:'Tipos'
+      }
+    },
     where:{
       _id
-    },
-    include:{
-      model: models.Menu,
-      as: 'Menus'
     }
   })
 }
-
 // // Create thought
 // export async function create(parentValue, { DireccionImagen }) {
 //   return await models.Ciudad.create( {DireccionImagen })
