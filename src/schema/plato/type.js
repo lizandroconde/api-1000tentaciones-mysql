@@ -12,6 +12,7 @@ const PlatoType = new GraphQLObjectType({
     nombre: {type: GraphQLString},
     titulo: {type: GraphQLString},
     status: {type: GraphQLBoolean},
+    necesario: {type: GraphQLBoolean},
     tipo: {type: GraphQLString},
     Tipos: {type: new GraphQLList(TipoType)}
     
