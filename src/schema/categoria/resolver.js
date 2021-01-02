@@ -7,7 +7,7 @@ export async function getAll() {
   return await models.Categoria.findAll()
 }
 export async function getAllbyId(parentValue,{_id}) {
-  return await models.Categoria.findAll({
+  return await models.Categoria.findOne({
     where:{
       _id
     },

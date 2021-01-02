@@ -12,7 +12,7 @@ export const Categorias = {
 }
 
 export const CategoriaId = {
-  type: new GraphQLList(CategoriaType),
+  type:  CategoriaType,
   args:{
     _id:{type: GraphQLInt}
   },
