@@ -8,9 +8,9 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "machuhop_hop",
-    "password": "$%machupicchuhop$%",
-    "database": "machuhop_hop",
+    "username": "tentaciones_db",
+    "password": "!@Y6(J-oVFvP",
+    "database": "tentaciones_1000",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
