@@ -47,8 +47,8 @@ export default (sequelize, DataTypes) => {
             
             Plato.hasMany(models.Tipo,{
                 as: "Tipos",foreignKey:{
-                    name:'_idmenu',
-                    field:'IdTipo'
+                    name:'_id',
+                    field:'IdPlato'
                 }
             })
             
