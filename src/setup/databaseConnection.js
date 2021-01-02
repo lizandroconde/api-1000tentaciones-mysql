@@ -18,7 +18,7 @@ const connection = new Sequelize(
     dialect: databaseConfigEnv.dialect, // habilite this and morgan and disable logging
     /*define:{
     underscored: true,
-  },*/ logging: false,
+  }, */logging: false,
     //operatorsAliases: false
   }
 );
@@ -32,7 +32,7 @@ connection
     console.info("INFO - Database connected.");
   })
   .catch((err) => {
-    //console.error('ERROR - Unable to connect to the database:', err)
+    console.error('ERROR - Unable to connect to the database:', err)
   });
 
 export default connection;

@@ -27,25 +27,18 @@ export default (sequelize, DataTypes) => {
         tableName: 'tentaciones_categoria'
         });    
         
-        // Actividad_Traductor.associate = models => {
-        //     Actividad_Traductor.belongsTo(models.Idioma,{
-        //         foreignKey:{
-        //             name:'IdIdioma',
-        //             field:'IdIdioma'
-        //         },
-        //          as:'Idiomas'
-        //     });
+        Categoria.associate = models => {
+            Categoria.hasMany(models.Menu,{
+                as: "Menus",
+                foreignKey:{
+                    name:'_id',
+                    field:'IdCategoria'
+                }  
+                });
             
 
-        //     Actividad_Traductor.belongsTo(models.Actividad,{
-        //         foreignKey:{
-        //             name:'IdActividad',
-        //             field:'IdActividad'
-        //         },
-        //          as:'Actividades'
-        //     });
 
-        // }
+        }
         
     return Categoria;
   }

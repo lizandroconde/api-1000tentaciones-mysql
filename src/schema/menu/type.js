@@ -1,9 +1,9 @@
 // Imports
 import {GraphQLObjectType,GraphQLList, GraphQLString, GraphQLInt, GraphQLFloat, GraphQLBoolean} from 'graphql'
-import MenuType from '../menu/type'
+import PlatoType from '../plato/type'
 // Thought type
-const CategoriaType = new GraphQLObjectType({
-  name: 'categoria',
+const MenuType = new GraphQLObjectType({
+  name: 'menu',
   description: '...',
 
   fields: () => ({
@@ -11,8 +11,13 @@ const CategoriaType = new GraphQLObjectType({
     nombre: {type: GraphQLString},
     imagen: {type: GraphQLString},
     status: {type: GraphQLBoolean},
-    Menus: {type: new GraphQLList(MenuType)}
+    descripcion: {type: GraphQLString},
+    tiempo: {type: GraphQLString},
+    precio: {type: GraphQLFloat},
+    _idcategoria: {type: GraphQLInt},
+    Platos:{type: new GraphQLList(PlatoType)}
+    
   })
 })
 
-export default CategoriaType
+export default MenuType
