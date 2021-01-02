@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
     let Tipo =  sequelize.define('Tipo', {
-        _idmenu: {
+        _id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
@@ -35,25 +35,16 @@ export default (sequelize, DataTypes) => {
         tableName: 'tentaciones_tipo'
         });    
         
-        // Actividad_Traductor.associate = models => {
-        //     Actividad_Traductor.belongsTo(models.Idioma,{
-        //         foreignKey:{
-        //             name:'IdIdioma',
-        //             field:'IdIdioma'
-        //         },
-        //          as:'Idiomas'
-        //     });
-            
+       Tipo.associate = models => {
+        Tipo.belongsTo(models.Plato,{
+            foreignKey:{
+                name:'_idplato',
+                field:'IdPLato'
+            }
+        })
+        
 
-        //     Actividad_Traductor.belongsTo(models.Actividad,{
-        //         foreignKey:{
-        //             name:'IdActividad',
-        //             field:'IdActividad'
-        //         },
-        //          as:'Actividades'
-        //     });
-
-        // }
+         }
         
     return Tipo;
   }

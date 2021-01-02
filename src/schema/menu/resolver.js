@@ -11,7 +11,9 @@ export async function getbyId(parentValue,{_id}) {
   return await models.Menu.findOne({
     include:{
       model: models.Plato,
+      required:true,
       include:{
+        required:true,
         model: models.Tipo,
         as:'Tipos'
       }
