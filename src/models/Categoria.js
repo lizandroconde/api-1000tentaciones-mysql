@@ -31,7 +31,7 @@ export default (sequelize, DataTypes) => {
             Categoria.hasMany(models.Menu,{
                 as: "Menus",
                 foreignKey:{
-                    name:'_id',
+                    name:'IdCategoria',
                     field:'IdCategoria'
                 }  
                 });
