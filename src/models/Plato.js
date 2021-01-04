@@ -40,7 +40,7 @@ export default (sequelize, DataTypes) => {
             Plato.belongsToMany(models.Menu,{
                 through: models.Menu_Plato,
                     foreignKey:{
-                        name:'_id',
+                        name:'_idplato',
                         field:'IdPlato'
                     }
                 });
