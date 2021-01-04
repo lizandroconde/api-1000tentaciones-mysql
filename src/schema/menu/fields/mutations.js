@@ -1,5 +1,5 @@
 // Imports
-import {GraphQLString, GraphQLInt, GraphQLFloat} from 'graphql'
+import {GraphQLString, GraphQLInt, GraphQLFloat, GraphQLBoolean} from 'graphql'
 
 // App Imports
 import {create} from '../resolver'
@@ -17,6 +17,10 @@ export const MenuCreate = {
         name: 'imagen',
         type: GraphQLString
     },
+    status: {
+      name: 'status',
+      type: GraphQLBoolean
+   },
     descripcion: {
         name: 'descripcion',
         type: GraphQLString

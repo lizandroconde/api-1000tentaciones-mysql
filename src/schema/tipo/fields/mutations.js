@@ -3,11 +3,11 @@ import {GraphQLString, GraphQLInt, GraphQLFloat, GraphQLBoolean} from 'graphql'
 
 // App Imports
 import {create} from '../resolver'
-import PlatoType from '../type'
+import TipoType from '../type'
 
 // Thought create
-export const PlatoCreate = {
-  type: PlatoType,
+export const TipoCreate = {
+  type: TipoType,
   args: {
    
     nombre: {
@@ -20,16 +20,16 @@ export const PlatoCreate = {
     },
     precio: {
         name: 'precio',
-        type: GraphQLBoolean
+        type: GraphQLFloat
     },
      
     status: {
-      name: 'tiempo',
+      name: 'status',
       type: GraphQLBoolean
     },
     _idplato: {
       name: '_idplato',
-      type: GraphQLBoolean
+      type: GraphQLInt
     },
   },
   resolve: create

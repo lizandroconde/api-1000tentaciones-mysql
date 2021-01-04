@@ -21,10 +21,10 @@ export async function getbyId(parentValue,{_id}) {
     }
   })
 }
-// // Create thought
-// export async function create(parentValue, { DireccionImagen }) {
-//   return await models.Ciudad.create( {DireccionImagen })
-// }
+
+export async function create(parentValue, { nombre,imagen,status,descripcion,precio,tiempo,_idcategoria }) {
+   return await models.Menu.create( { nombre,imagen,status,descripcion,precio,tiempo,_idcategoria })
+}
 
 // // Delete thought
 // export async function remove(parentValue, {IdImagen}) {

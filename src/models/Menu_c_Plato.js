@@ -4,7 +4,6 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
-            defaultValue: null,
             field: 'IdMenuPlato'
         },
         _idplato: {

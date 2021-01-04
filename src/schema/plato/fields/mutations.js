@@ -2,8 +2,9 @@
 import {GraphQLString, GraphQLInt, GraphQLFloat, GraphQLBoolean} from 'graphql'
 
 // App Imports
-import {create} from '../resolver'
+import {create,asig_menu} from '../resolver'
 import PlatoType from '../type'
+import Menu_PlatoType from '../menu_plato'
 
 // Thought create
 export const PlatoCreate = {
@@ -27,21 +28,25 @@ export const PlatoCreate = {
       type: GraphQLBoolean
     }, 
     status: {
-      name: 'tiempo',
+      name: 'status',
       type: GraphQLBoolean
     }
   },
   resolve: create
 }
 
-// Thought remove
-// export const ImagenRemove = {
-//   type: ImagenType,
-//   args: {
-//     IdImagen: {
-//       name: 'IdImagen',
-//       type: GraphQLInt
-//     }
-//   },
-//   resolve: remove
-// }
+export const AsigPlato = {
+  type: Menu_PlatoType,
+  args: {
+   
+    _idplato: {
+      name: '_idplato',
+      type: GraphQLInt
+    },
+    _idmenu: {
+      name: '_idmenu',
+      type: GraphQLInt
+    },
+  },
+  resolve: asig_menu
+}

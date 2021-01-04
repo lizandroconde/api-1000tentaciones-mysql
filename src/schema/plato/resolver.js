@@ -7,10 +7,14 @@ export async function getAll() {
   return await models.Plato.findAll()
 }
 
-// // Create thought
-// export async function create(parentValue, { DireccionImagen }) {
-//   return await models.Ciudad.create( {DireccionImagen })
-// }
+
+export async function create(parentValue, { nombre,titulo,status,necesario,tipo }) {
+  return await models.Plato.create(  { nombre,titulo,status,necesario,tipo })
+}
+
+export async function asig_menu(parentValue, { _idmenu,_idplato  }) {
+  return await models.Menu_Plato.create(  { _idmenu,_idplato  })
+}
 
 // // Delete thought
 // export async function remove(parentValue, {IdImagen}) {

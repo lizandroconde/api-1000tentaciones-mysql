@@ -10,9 +10,8 @@ export async function getAll() {
 
 
 // // Create thought
-export async function create(parentValue, data) {
-  console.log(data)
-   //return await models.Ciudad.create( {DireccionImagen })
+export async function create( {nombre,cod,status,preci,_idplato}) {
+  return await models.Tipo.create( {nombre,cod,status,preci,_idplato})
 }
 
 // // Delete thought
