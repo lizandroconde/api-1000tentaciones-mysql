@@ -35,12 +35,12 @@ export default (sequelize, DataTypes) => {
             
             Reserva_Plato.belongsTo(models.Plato,{
                 as: "Plato",foreignKey:{
-                    name:'_id',
-                    field:'IdReservaPlato'
+                    name:'IdPlato',
+                    field:'IdPlato'
                 }
             })
             
-
+             
 
         }
 

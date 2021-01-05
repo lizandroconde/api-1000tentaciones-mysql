@@ -44,7 +44,7 @@ export default (sequelize, DataTypes) => {
             Reserva_Menu.belongsTo(models.Menu,{
                 as: "Menu",foreignKey:{
                     name:'_id',
-                    field:'IdReservaMenu'
+                    field:'IdMenu'
                 }
             })
             

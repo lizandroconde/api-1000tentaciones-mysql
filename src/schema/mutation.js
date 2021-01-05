@@ -5,6 +5,7 @@ import {GraphQLObjectType} from 'graphql'
 import * as menu from './menu/fields/mutations'
 import * as plato from './plato/fields/mutations'
 import * as tipo from './tipo/fields/mutations'
+import * as reserva from './reserva/fields/mutations'
 // Mutation
 const mutation = new GraphQLObjectType({
   name: 'mutations',
@@ -14,6 +15,7 @@ const mutation = new GraphQLObjectType({
   ...menu,
   ...plato,
   ...tipo,
+  ...reserva
     
   }
 })

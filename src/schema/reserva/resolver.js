@@ -45,10 +45,40 @@ export async function getbyId(parentValue,{_id}) {
 
 
 
-// // Create thought
-// export async function create(parentValue, { DireccionImagen }) {
-//   return await models.Ciudad.create( {DireccionImagen })
-// }
+
+export async function create(parentValue, { nombre,contacto,direccion,total }) {
+  let f = new Date();
+
+  let crip = "123QWERTYUIOPA456SDFGHJKLZXCVBNM789";
+
+  let _id = `BK-${f.getDate() < 10 ? `0${f.getDate()}` : f.getDate()}${
+    f.getMonth() + 1 < 10 ? `0${f.getMonth() + 1}` : f.getMonth()
+  }${f.getFullYear()}`;
+
+  let longitud = 5;
+
+  for (let i = 0; i < longitud; i++) {
+    _id += crip[Math.floor(Math.random() * (crip.length - 1))];
+  }
+
+
+  return await models.Reserva.create(  { _id,nombre,contacto,direccion,total })
+}
+
+export async function createMenu(parentValue, { CodReserva,_idmenu,cantidad,total }) {
+ 
+  return await models.Reserva_Menu.create(  { _idreserva:CodReserva,_idmenu,cantidad,total})
+}
+
+export async function createPlato(parentValue, {_idreservamenu,_idplato }) {
+ 
+  return await models.Reserva_Plato.create( {_idreservamenu,_idplato })
+}
+
+export async function createTipo(parentValue, {_idreservaplato,_idtipo }) {
+ 
+  return await models.Reserva_Tipo.create( {_idreservaplato,_idtipo })
+}
 
 // // Delete thought
 // export async function remove(parentValue, {IdImagen}) {

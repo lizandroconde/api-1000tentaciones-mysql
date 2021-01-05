@@ -8,7 +8,7 @@ const ReservaType = new GraphQLObjectType({
   description: '...',
 
   fields: () => ({
-    _id: {type: GraphQLInt},
+    _id: {type: GraphQLString},
     nombre: {type: GraphQLString},
     direccion: {type: GraphQLString},
     contacto: {type: GraphQLString},

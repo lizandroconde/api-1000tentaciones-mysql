@@ -13,7 +13,7 @@ export default (sequelize, DataTypes) => {
            type: DataTypes.STRING(255),
            field: 'Direccion'
         },
-        Contacto: {
+        contacto: {
             type: DataTypes.STRING(255),
             field: 'Contacto'
         },
