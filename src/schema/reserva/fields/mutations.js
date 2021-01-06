@@ -29,6 +29,14 @@ export const ReservaCreate={
       name: 'total',
       type:  GraphQLFloat
     },
+    referencia: {
+      name: 'referencia',
+      type:  GraphQLString
+    },
+    metodo: {
+      name: 'metodo',
+      type:  GraphQLString
+    },
     Menus:{
       type: new GraphQLList(ReservaMenuInput)
     }

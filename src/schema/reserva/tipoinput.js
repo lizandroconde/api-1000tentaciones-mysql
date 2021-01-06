@@ -7,7 +7,6 @@ const ReservaTipoInput = new GraphQLInputObjectType({
   description: '...',
 
   fields: () => ({
-    _idreservaplato: {type: GraphQLInt},
     _idtipo: {type: GraphQLInt},
   })
 })

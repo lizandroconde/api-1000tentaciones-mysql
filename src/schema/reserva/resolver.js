@@ -45,9 +45,9 @@ export async function getbyId(parentValue,{_id}) {
 
 
 
-export async function create(parentValue, {nombre,contacto,direccion,total,Menus }) {
+export async function create(parentValue, {nombre,contacto,direccion,total,referencia,metodo,Menus }) {
   let f = new Date();
-
+ 
   let crip = "123QWERTYUIOPA456SDFGHJKLZXCVBNM789";
 
   let _id = `BK-${f.getDate() < 10 ? `0${f.getDate()}` : f.getDate()}${
@@ -61,7 +61,7 @@ export async function create(parentValue, {nombre,contacto,direccion,total,Menus
   }
   
   
-  let Reserva_ = await models.Reserva.create({_id,nombre,contacto,direccion,total})
+  let Reserva_ = await models.Reserva.create({_id,nombre,contacto,direccion,total,referencia,metodo})
   for(let menu of Menus){
       let { _idmenu,total,cantidad,Platos} = menu
       let Menu_ = await models.Reserva_Menu.create({_idreserva:Reserva_._id,_idmenu,total,cantidad});

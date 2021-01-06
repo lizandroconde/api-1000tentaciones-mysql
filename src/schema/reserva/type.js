@@ -13,6 +13,8 @@ const ReservaType = new GraphQLObjectType({
     direccion: {type: GraphQLString},
     contacto: {type: GraphQLString},
     total: {type: GraphQLString},
+    metodo: {type: GraphQLString},
+    referencia: {type: GraphQLString},
     Menus: {type: new GraphQLList(ReservaMenuType)}
   })
 })

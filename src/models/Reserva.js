@@ -1,3 +1,4 @@
+
 export default (sequelize, DataTypes) => {
     let Reserva =  sequelize.define('Reserva', {
         _id: {
@@ -20,7 +21,23 @@ export default (sequelize, DataTypes) => {
         total: {
             type: DataTypes.FLOAT(16,2),
             field: 'Total'
-        }
+        },
+        metodo: {
+            type: DataTypes.STRING(255),
+            field: 'Metodo'
+        },
+        referencia: {
+            type: DataTypes.STRING(255),
+            field: 'Referencia'
+        },
+        fecha: {
+            type: DataTypes.STRING(255),
+            field: 'Fecha'
+        },
+        hora: {
+            type: DataTypes.STRING(255),
+            field: 'Hora'
+        },
         },
         {
         timestamps: false,
