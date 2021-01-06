@@ -1,7 +1,6 @@
 // App Imports
 import models from '../../models'
 
-
 // Get all thoughts
 export async function getAll() {
   return await models.Reserva.findAll()
@@ -46,7 +45,7 @@ export async function getbyId(parentValue,{_id}) {
 
 
 
-export async function create(parentValue, { nombre,contacto,direccion,total }) {
+export async function create(parentValue, {nombre,contacto,direccion,total,Menus }) {
   let f = new Date();
 
   let crip = "123QWERTYUIOPA456SDFGHJKLZXCVBNM789";
@@ -60,9 +59,24 @@ export async function create(parentValue, { nombre,contacto,direccion,total }) {
   for (let i = 0; i < longitud; i++) {
     _id += crip[Math.floor(Math.random() * (crip.length - 1))];
   }
-
-
-  return await models.Reserva.create(  { _id,nombre,contacto,direccion,total })
+  
+  
+  let Reserva_ = await models.Reserva.create({_id,nombre,contacto,direccion,total})
+  for(let menu of Menus){
+      let { _idmenu,total,cantidad,Platos} = menu
+      let Menu_ = await models.Reserva_Menu.create({_idreserva:Reserva_._id,_idmenu,total,cantidad});
+      for(let plato of Platos){
+        let {_idplato,Tipos} = plato
+        let Plato_ = await models.Reserva_Plato.create({_idreservamenu:Menu_._id,_idplato});
+        for(let tipo of Tipos){
+          let {_idtipo} = tipo
+          await models.Reserva_Tipo.create({_idreservaplato:Plato_._id,_idtipo})
+        }
+     }
+  }
+  return {
+    _id: Reserva_._id
+  }
 }
 
 export async function createMenu(parentValue, { CodReserva,_idmenu,cantidad,total }) {

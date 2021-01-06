@@ -7,6 +7,7 @@ import {create,createMenu,createPlato,createTipo,} from '../resolver'
 import ReservaMenuType from '../menutype'
 import ReservaPlatoType from '../platostype'
 import ReservaTipoType from '../tipotype'
+import ReservaMenuInput from '../menuimput'
  
  
 
@@ -14,7 +15,6 @@ export const ReservaCreate={
   type: ReservaType,
   args:{
     nombre: {
-      name: 'nombre',
       type: GraphQLString,
     },
     contacto: {
@@ -29,6 +29,9 @@ export const ReservaCreate={
       name: 'total',
       type:  GraphQLFloat
     },
+    Menus:{
+      type: new GraphQLList(ReservaMenuInput)
+    }
      
   },
   resolve: create
