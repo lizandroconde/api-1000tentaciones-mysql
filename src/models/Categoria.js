@@ -19,6 +19,10 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.BOOLEAN,
             field: 'Status'
         },
+        slug: {
+            type: DataTypes.STRING(255),
+            field: 'Slug'
+        },
         },
         {
         timestamps: false,

@@ -12,6 +12,7 @@ const MenuType = new GraphQLObjectType({
     imagen: {type: GraphQLString},
     status: {type: GraphQLBoolean},
     descripcion: {type: GraphQLString},
+    slug: {type: GraphQLString},
     tiempo: {type: GraphQLString},
     precio: {type: GraphQLFloat},
     _idcategoria: {type: GraphQLInt},

@@ -35,6 +35,11 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             field: 'IdCategoria'
         },
+        slug: {
+            type: DataTypes.STRING(225),
+            field: 'Slug'
+        },
+        
         },
         {
         timestamps: false,

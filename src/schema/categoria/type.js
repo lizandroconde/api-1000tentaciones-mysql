@@ -11,6 +11,7 @@ const CategoriaType = new GraphQLObjectType({
     nombre: {type: GraphQLString},
     imagen: {type: GraphQLString},
     status: {type: GraphQLBoolean},
+    slug: {type: GraphQLString},
     Menus: {type: new GraphQLList(MenuType)}
   })
 })

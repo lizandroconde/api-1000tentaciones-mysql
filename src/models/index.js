@@ -16,6 +16,7 @@ let models = {
 	Reserva_Menu: databaseConnection.import('./Reserva_Menu'),
 	Reserva_Plato: databaseConnection.import('./Reserva_Plato'),
 	Reserva_Tipo: databaseConnection.import('./Reserva_Tipo'),
+	Poster: databaseConnection.import('./Poster'),
 	
 };
 
